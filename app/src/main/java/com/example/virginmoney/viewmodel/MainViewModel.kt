@@ -1,5 +1,8 @@
 package com.example.virginmoney.viewmodel
 
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.virginmoney.model.People
@@ -10,14 +13,12 @@ import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {
 
-    lateinit var roomsListResponse:ArrayList<Room>
-    lateinit var peopleListResponse:ArrayList<People>
+    var roomsListResponse:ArrayList<Room> by mutableStateOf(arrayListOf())
+    var peopleListResponse:ArrayList<People> by mutableStateOf(arrayListOf())
     lateinit var peopleRepositoryImpl : PeopleRepositoryImpl
     lateinit var roomRepositoryImpl : RoomRepositoryImpl
 
     init {
-        roomsListResponse = ArrayList()
-        peopleListResponse = ArrayList()
         peopleRepositoryImpl = PeopleRepositoryImpl()
         roomRepositoryImpl = RoomRepositoryImpl()
     }

@@ -185,7 +185,7 @@ fun RoomItem(room: Room) {
                     )
 
                     Text(
-                        text = room.maxOccupancy.toString(),
+                        text = "Max Occupancy : " + room.maxOccupancy.toString(),
                         style = MaterialTheme.typography.body1,
                         maxLines = 2,
                         overflow = TextOverflow.Ellipsis
@@ -193,7 +193,7 @@ fun RoomItem(room: Room) {
 
                     if(room.isOccupied!!) {
                         Text(
-                            text = room.maxOccupancy.toString(),
+                            text = "Room is occupied",
                             style = MaterialTheme.typography.body1,
                             maxLines = 2,
                             overflow = TextOverflow.Ellipsis,
@@ -204,7 +204,7 @@ fun RoomItem(room: Room) {
                     else
                     {
                         Text(
-                            text = room.maxOccupancy.toString(),
+                            text = "Room is not occupied",
                             style = MaterialTheme.typography.body1,
                             maxLines = 2,
                             overflow = TextOverflow.Ellipsis,
